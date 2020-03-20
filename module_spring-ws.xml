@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_spring-ws" default="compile.module.spring-ws">
+  <dirname property="module.spring-ws.basedir" file="${ant.file.module_spring-ws}"/>
+  
+  <property name="module.jdk.home.spring-ws" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.spring-ws" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.spring-ws" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.spring-ws" value="-encoding UTF-8 -source 8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="spring-ws.output.dir" value="${module.spring-ws.basedir}/target/classes"/>
+  <property name="spring-ws.testoutput.dir" value="${module.spring-ws.basedir}/target/test-classes"/>
+  
+  <path id="spring-ws.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="spring-ws.module.production.classpath">
+    <path refid="${module.jdk.classpath.spring-ws}"/>
+    <path refid="library.maven:_org.springframework.ws:spring-ws-core:2.4.0.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_org.springframework.ws:spring-xml:2.4.0.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.2.7.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-oxm:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.2.7.release.classpath"/>
+    <path refid="library.maven:_jaxen:jaxen:1.1.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_jdom:jdom:1.0.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.3.02.classpath"/>
+    <path refid="library.maven:_xerces:xercesimpl:2.6.2.classpath"/>
+    <path refid="library.maven:_xom:xom:1.0.classpath"/>
+    <path refid="library.maven:_xerces:xmlparserapis:2.6.2.classpath"/>
+    <path refid="library.maven:_xalan:xalan:2.6.0.classpath"/>
+    <path refid="library.maven:_com.ibm.icu:icu4j:2.6.1.classpath"/>
+    <path refid="library.maven:_wsdl4j:wsdl4j:1.6.2.classpath"/>
+  </path>
+  
+  <path id="spring-ws.runtime.production.module.classpath">
+    <pathelement location="${spring-ws.output.dir}"/>
+    <path refid="library.maven:_org.springframework.ws:spring-ws-core:2.4.0.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_org.springframework.ws:spring-xml:2.4.0.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.2.7.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-oxm:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.2.7.release.classpath"/>
+    <path refid="library.maven:_jaxen:jaxen:1.1.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_jdom:jdom:1.0.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.3.02.classpath"/>
+    <path refid="library.maven:_xerces:xercesimpl:2.6.2.classpath"/>
+    <path refid="library.maven:_xom:xom:1.0.classpath"/>
+    <path refid="library.maven:_xerces:xmlparserapis:2.6.2.classpath"/>
+    <path refid="library.maven:_xalan:xalan:2.6.0.classpath"/>
+    <path refid="library.maven:_com.ibm.icu:icu4j:2.6.1.classpath"/>
+    <path refid="library.maven:_wsdl4j:wsdl4j:1.6.2.classpath"/>
+  </path>
+  
+  <path id="spring-ws.module.classpath">
+    <path refid="${module.jdk.classpath.spring-ws}"/>
+    <pathelement location="${spring-ws.output.dir}"/>
+    <path refid="library.maven:_org.springframework.ws:spring-ws-core:2.4.0.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_org.springframework.ws:spring-xml:2.4.0.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.2.7.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-oxm:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.2.7.release.classpath"/>
+    <path refid="library.maven:_jaxen:jaxen:1.1.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_jdom:jdom:1.0.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.3.02.classpath"/>
+    <path refid="library.maven:_xerces:xercesimpl:2.6.2.classpath"/>
+    <path refid="library.maven:_xom:xom:1.0.classpath"/>
+    <path refid="library.maven:_xerces:xmlparserapis:2.6.2.classpath"/>
+    <path refid="library.maven:_xalan:xalan:2.6.0.classpath"/>
+    <path refid="library.maven:_com.ibm.icu:icu4j:2.6.1.classpath"/>
+    <path refid="library.maven:_wsdl4j:wsdl4j:1.6.2.classpath"/>
+  </path>
+  
+  <path id="spring-ws.runtime.module.classpath">
+    <pathelement location="${spring-ws.testoutput.dir}"/>
+    <pathelement location="${spring-ws.output.dir}"/>
+    <path refid="library.maven:_org.springframework.ws:spring-ws-core:2.4.0.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_org.springframework.ws:spring-xml:2.4.0.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.2.7.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-oxm:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.2.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.2.7.release.classpath"/>
+    <path refid="library.maven:_jaxen:jaxen:1.1.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_jdom:jdom:1.0.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.3.02.classpath"/>
+    <path refid="library.maven:_xerces:xercesimpl:2.6.2.classpath"/>
+    <path refid="library.maven:_xom:xom:1.0.classpath"/>
+    <path refid="library.maven:_xerces:xmlparserapis:2.6.2.classpath"/>
+    <path refid="library.maven:_xalan:xalan:2.6.0.classpath"/>
+    <path refid="library.maven:_com.ibm.icu:icu4j:2.6.1.classpath"/>
+    <path refid="library.maven:_wsdl4j:wsdl4j:1.6.2.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.spring-ws">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.spring-ws">
+    <patternset refid="excluded.from.module.spring-ws"/>
+  </patternset>
+  
+  <path id="spring-ws.module.sourcepath">
+    <dirset dir="${module.spring-ws.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+      <include name="target/generated-sources/xjc"/>
+    </dirset>
+  </path>
+  
+  <path id="spring-ws.module.test.sourcepath">
+    <dirset dir="${module.spring-ws.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.spring-ws" depends="compile.module.spring-ws.production,compile.module.spring-ws.tests" description="Compile module spring-ws"/>
+  
+  <target name="compile.module.spring-ws.production" depends="register.custom.compilers" description="Compile module spring-ws; production classes">
+    <mkdir dir="${spring-ws.output.dir}"/>
+    <javac2 destdir="${spring-ws.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.spring-ws}/javac">
+      <compilerarg line="${compiler.args.spring-ws}"/>
+      <bootclasspath refid="spring-ws.module.bootclasspath"/>
+      <classpath refid="spring-ws.module.production.classpath"/>
+      <src refid="spring-ws.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.spring-ws"/>
+    </javac2>
+    
+    <copy todir="${spring-ws.output.dir}">
+      <fileset dir="${module.spring-ws.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.spring-ws.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.spring-ws.basedir}/target/generated-sources/xjc">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.spring-ws.tests" depends="register.custom.compilers,compile.module.spring-ws.production" description="compile module spring-ws; test classes" unless="skip.tests">
+    <mkdir dir="${spring-ws.testoutput.dir}"/>
+    <javac2 destdir="${spring-ws.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.spring-ws}/javac">
+      <compilerarg line="${compiler.args.spring-ws}"/>
+      <bootclasspath refid="spring-ws.module.bootclasspath"/>
+      <classpath refid="spring-ws.module.classpath"/>
+      <src refid="spring-ws.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.spring-ws"/>
+    </javac2>
+    
+    <copy todir="${spring-ws.testoutput.dir}">
+      <fileset dir="${module.spring-ws.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.spring-ws" description="cleanup module">
+    <delete dir="${spring-ws.output.dir}"/>
+    <delete dir="${spring-ws.testoutput.dir}"/>
+  </target>
+</project>

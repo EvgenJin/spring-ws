@@ -30,11 +30,11 @@
        <version>1.1</version>
     </dependency>
 
-<!--    <dependency>
+    <dependency>
        <groupId>wsdl4j</groupId>
        <artifactId>wsdl4j</artifactId>
        <version>1.6.2</version>
-    </dependency>-->
+    </dependency>
    </dependencies>    
     <build>
       <finalName>spring-ws</finalName>
@@ -53,8 +53,10 @@
           <configuration>
             <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
             <schemaIncludes>
-              <include>*.wsdl</include>
+              <!--<include>*.wsdl</include>-->
+              <include>*.xsd</include>
             </schemaIncludes>
+            <bindingDirectory>${project.basedir}/src/main/resources</bindingDirectory>
           </configuration>
         </plugin>
       </plugins>

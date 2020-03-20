@@ -1,0 +1,38 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/HelloService" elementFormDefault="qualified">
+  <element name="ServiceRequest">
+    <complexType>
+      <sequence>
+        <element name="name" type="string" maxOccurs="1" minOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ServiceResponse">
+    <complexType>
+      <sequence>
+        <element name="hello" type="string" maxOccurs="1" minOccurs="1"/>
+        <element name="currentTime" type="time" maxOccurs="1" minOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>-->
+<xsd:schema targetNamespace="http://codenotfound.com/types/helloworld" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  attributeFormDefault="unqualified" version="1.0">
+
+  <xsd:element name="person">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="firstName" type="xsd:string" />
+        <xsd:element name="lastName" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="greeting">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="greeting" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

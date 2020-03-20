@@ -16,9 +16,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 @Endpoint
 public class HelloWorldEndpoint {
 
-  @PayloadRoot(
-      namespace = "http://codenotfound.com/types/helloworld",
-      localPart = "person")
+  @PayloadRoot(namespace = "http://codenotfound.com/types/helloworld",localPart = "person")
   @ResponsePayload
   public Greeting sayHello(@RequestPayload Person request) {
     String greeting = "Hello " + request.getFirstName() + " "
@@ -29,4 +27,6 @@ public class HelloWorldEndpoint {
     response.setGreeting(greeting);
     return response;
   }
+  
 }
+

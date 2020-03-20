@@ -12,5 +12,14 @@
 
     <context:component-scan base-package = "ru.evg_springws.service"/>
     <sws:annotation-driven/>
-    <sws:static-wsdl id = "hello" location = "/WEB-INF/hello.wsdl"/>
+    <!--<sws:static-wsdl id = "hello" location = "/WEB-INF/hello.wsdl"/>-->
+    <!--<sws:dynamic-wsdl id="hello" portTypeName="EmployeePort"-->
+            <!--locationUri="/hello" targetNamespace="http://codenotfound.com/types/helloworld">-->
+            <!--<sws:xsd location="/WEB-INF/hello.xsd" />-->
+    <!--</sws:dynamic-wsdl>-->
+    <sws:dynamic-wsdl id="HelloService" portTypeName="service" locationUri="/HelloService" >
+        <sws:xsd location="/WEB-INF/hello.xsd" />
+    </sws:dynamic-wsdl>
 </beans>
+
+
