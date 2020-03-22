@@ -16,14 +16,12 @@
          <groupId>org.springframework.ws</groupId>
          <artifactId>spring-ws-core</artifactId>
          <version>2.4.0.RELEASE</version>
-      </dependency>
-      
+      </dependency>    
 <!--    <dependency>
        <groupId>jdom</groupId>
        <artifactId>jdom</artifactId>
        <version>1.0</version>
     </dependency>-->
-
     <dependency>
        <groupId>jaxen</groupId>
        <artifactId>jaxen</artifactId>
@@ -51,14 +49,23 @@
             </execution>
           </executions>
           <configuration>
-            <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
+            <schemaDirectory>${project.basedir}/src/main/webapp/WEB-INF</schemaDirectory>
             <schemaIncludes>
               <!--<include>*.wsdl</include>-->
-              <include>*.xsd</include>
+              <include>hello.xsd</include>
             </schemaIncludes>
             <bindingDirectory>${project.basedir}/src/main/resources</bindingDirectory>
           </configuration>
         </plugin>
+<!--        <plugin>
+             <groupId>org.apache.tomcat.maven</groupId>
+             <artifactId>tomcat7-maven-plugin</artifactId>
+             <version>2.2</version>
+             <configuration>
+                <port>8090</port>
+                <path>/${project.build.finalName}</path>
+             </configuration>
+         </plugin>          -->
       </plugins>
     </build>    
 </project>

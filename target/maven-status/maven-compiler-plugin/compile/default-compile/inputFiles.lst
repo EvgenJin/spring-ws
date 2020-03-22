@@ -1,9 +1,7 @@
-C:\Projects\JAVA\spring-ws\target\generated-sources\xjc\com\codenotfound\types\helloworld\Greeting.java
-C:\Projects\JAVA\spring-ws\target\generated-sources\xjc\com\codenotfound\types\helloworld\ObjectFactory.java
-C:\Projects\JAVA\spring-ws\src\main\java\client\CountryServiceClient.java
-C:\Projects\JAVA\spring-ws\src\main\java\ru\evg_springws\service\HelloWorldEndpoint.java
-C:\Projects\JAVA\spring-ws\src\main\java\ru\evg_springws\service\HumanResourceServiceImpl.java
-C:\Projects\JAVA\spring-ws\target\generated-sources\xjc\com\codenotfound\types\helloworld\Person.java
-C:\Projects\JAVA\spring-ws\src\main\java\ru\evg_springws\service\HumanResourceService.java
-C:\Projects\JAVA\spring-ws\target\generated-sources\xjc\com\codenotfound\types\helloworld\package-info.java
-C:\Projects\JAVA\spring-ws\src\main\java\client\MainApp.java
+/Users/admin/NetBeansProjects/spring-ws/target/generated-sources/xjc/org/example/helloservice/package-info.java
+/Users/admin/NetBeansProjects/spring-ws/target/generated-sources/xjc/org/example/helloservice/ServiceResponse.java
+/Users/admin/NetBeansProjects/spring-ws/target/generated-sources/xjc/org/example/helloservice/ServiceRequest.java
+/Users/admin/NetBeansProjects/spring-ws/src/main/java/ru/evg_springws/service/HelloServiceEndpoint.java
+/Users/admin/NetBeansProjects/spring-ws/target/generated-sources/xjc/org/example/helloservice/ObjectFactory.java
+/Users/admin/NetBeansProjects/spring-ws/src/main/java/client/MainApp.java
+/Users/admin/NetBeansProjects/spring-ws/src/main/java/client/CountryServiceClient.java

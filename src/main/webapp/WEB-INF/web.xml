@@ -4,7 +4,7 @@
    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
    version = "2.4">
 
-   <display-name>TutorialsPoint HR Leave Service</display-name>
+   <display-name>Spring-ws service</display-name>
    <servlet>
       <servlet-name>spring-ws</servlet-name>
       <servlet-class>
@@ -15,9 +15,36 @@
          <param-value>true</param-value>
       </init-param>
    </servlet>
-
+   
    <servlet-mapping>
       <servlet-name>spring-ws</servlet-name>
       <url-pattern>/*</url-pattern>
-   </servlet-mapping>
+    </servlet-mapping>
+    
+
+            
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>spring-ws</web-resource-name>
+            <url-pattern>/HelloService</url-pattern>
+            <!--<http-method>GET</http-method>-->
+            <!--<http-method>POST</http-method>-->
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>test</role-name>
+        </auth-constraint>
+<!--        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>-->
+    </security-constraint>
+    <security-role>
+        <role-name>test</role-name>
+    </security-role>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <!--<realm-name>UserDatabase</realm-name>-->
+    </login-config>
+    
+  
+      
 </web-app>

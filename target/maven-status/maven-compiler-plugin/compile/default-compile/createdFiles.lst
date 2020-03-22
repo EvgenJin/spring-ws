@@ -1,9 +1,7 @@
-ru\evg_springws\service\HelloWorldEndpoint.class
-com\codenotfound\types\helloworld\Greeting.class
-com\codenotfound\types\helloworld\ObjectFactory.class
-client\CountryServiceClient.class
-client\MainApp.class
-com\codenotfound\types\helloworld\package-info.class
-ru\evg_springws\service\HumanResourceService.class
-ru\evg_springws\service\HumanResourceServiceImpl.class
-com\codenotfound\types\helloworld\Person.class
+org/example/helloservice/ServiceRequest.class
+org/example/helloservice/package-info.class
+client/MainApp.class
+ru/evg_springws/service/HelloServiceEndpoint.class
+client/CountryServiceClient.class
+org/example/helloservice/ServiceResponse.class
+org/example/helloservice/ObjectFactory.class
