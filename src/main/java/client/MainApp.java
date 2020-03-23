@@ -3,25 +3,30 @@ package client;
 import org.example.helloservice.ObjectFactory;
 import org.example.helloservice.ServiceRequest;
 import org.example.helloservice.ServiceResponse;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
+import ru.evg_springws.dao.ServiceResponseDAO;
 
 public class MainApp {
-    public static void main(String[] args) {
-        String uri = "http://localhost:8080/spring-ws";
-        CountryServiceClient client = new CountryServiceClient();
-        ObjectFactory factory = new ObjectFactory();
-        ServiceRequest request = factory.createServiceRequest();
-
-        request.setFirstName("asd");
-        request.setLastName("ssss");
-
-        Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-        marshaller.setContextPath("http://www.example.org/HelloService");
-        client.setMarshaller(marshaller);
-        client.setUnmarshaller(marshaller);
-
-        ServiceResponse greeting = (ServiceResponse) client.getWebServiceTemplate().marshalSendAndReceive(uri,request);
-        
-        System.out.println(greeting.getType());
+    public static void main(String[] args) throws Exception{
+//      CountryServiceClient client = new CountryServiceClient();
+//      Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
+//      marshaller.setContextPath("org.example.helloservice");
+//      client.setMarshaller(marshaller);
+//      client.setUnmarshaller(marshaller);
+//      try {
+//        ServiceResponse response = client.getCountryDetails("United States");      
+//      }
+//      catch (Exception e) {
+//          System.err.println("asdaaa"+e);
+//      }
+		
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-database.xml");
+		ServiceResponseDAO employeeDAO = (ServiceResponseDAO)applicationContext.getBean("employeeDAOWithJDBCTemplate");
+			
+		ServiceResponse retrievedEmployee = employeeDAO.getServiceResponse();
+		System.out.println("Retrieved Employee :: " + retrievedEmployee.getGreeting());
     }
+      
 }
