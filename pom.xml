@@ -11,6 +11,20 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>
     </properties>
+    <repositories>
+      <repository>
+        <id>my-repo1</id>
+        <name>your custom repo</name>
+        <url>https://repo.maven.apache.org/maven2</url>        
+      </repository>
+    </repositories>
+    <pluginRepositories>
+      <pluginRepository>
+        <id>my-repo2</id>
+        <name>your custom repo2</name>
+        <url>https://repo.maven.apache.org/maven2</url>
+      </pluginRepository>       
+    </pluginRepositories>      
    <dependencies>
       <dependency>
          <groupId>org.springframework.ws</groupId>
@@ -57,6 +71,24 @@
             <bindingDirectory>${project.basedir}/src/main/resources</bindingDirectory>
           </configuration>
         </plugin>
+        <plugin>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.8</version>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <configuration>
+                <target>
+                  <copy file="${project.build.directory}/${project.build.finalName}.war"
+                        todir="C:\mysoft\apache-tomcat-9.0.19\webapps\" />
+                </target>
+              </configuration>
+              <goals>
+                <goal>run</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>        
 <!--        <plugin>
              <groupId>org.apache.tomcat.maven</groupId>
              <artifactId>tomcat7-maven-plugin</artifactId>
