@@ -15,20 +15,6 @@
     <sws:dynamic-wsdl id="HelloService" portTypeName="service" locationUri="/HelloService" >
         <sws:xsd location="/WEB-INF/hello.xsd" />
     </sws:dynamic-wsdl>
-    <bean id="webServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
-        <constructor-arg ref="messageFactory"/>
-        <property name="messageSender">
-            <bean class="org.springframework.ws.transport.http.HttpComponentsMessageSender">
-                <property name="credentials">
-                    <bean class="org.apache.http.auth.UsernamePasswordCredentials">
-                        <constructor-arg value="test:test"/>
-                    </bean>
-                </property>
-            </bean>
-        </property>
-        <property name="defaultUri" value="http://localhost:8080/spring-ws"/>
-    </bean>    
-
 </beans>
 
 
