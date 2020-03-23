@@ -16,7 +16,7 @@
       </init-param>
    </servlet>
    
-   <servlet-mapping>
+    <servlet-mapping>
       <servlet-name>spring-ws</servlet-name>
       <url-pattern>/*</url-pattern>
     </servlet-mapping>
@@ -26,16 +26,16 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>spring-ws</web-resource-name>
-            <url-pattern>/HelloService</url-pattern>
+            <url-pattern>/*</url-pattern>
             <!--<http-method>GET</http-method>-->
             <!--<http-method>POST</http-method>-->
         </web-resource-collection>
         <auth-constraint>
             <role-name>test</role-name>
         </auth-constraint>
-<!--        <user-data-constraint>
+        <user-data-constraint>
             <transport-guarantee>NONE</transport-guarantee>
-        </user-data-constraint>-->
+        </user-data-constraint>
     </security-constraint>
     <security-role>
         <role-name>test</role-name>

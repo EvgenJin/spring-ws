@@ -18,7 +18,7 @@ public class HelloServiceEndpoint {
     /**
      * 
      * @param request клиент фамилия, имя
-     * @return решение, тип
+     * @return строка1,строка2
      * @throws Exception 
      */
     
