@@ -29,11 +29,10 @@ public class HelloServiceEndpoint {
     @ResponsePayload
     public ServiceResponse getService(@RequestPayload ServiceRequest request) throws Exception {
         ServiceResponse retrievedEmployee = employeeDAO.getServiceResponse();
-        String greeting = request.getFirstName();
         ObjectFactory factory = new ObjectFactory();
         ServiceResponse response = factory.createServiceResponse();
-        response.setGreeting(greeting);
-        response.setType(retrievedEmployee.getGreeting());
+        response.setGreeting(retrievedEmployee.getGreeting());
+        response.setType(retrievedEmployee.getType());
         return response;
       }  
 }

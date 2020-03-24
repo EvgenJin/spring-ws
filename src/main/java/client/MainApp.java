@@ -10,13 +10,15 @@ import ru.evg_springws.dao.ServiceResponseDAO;
 
 public class MainApp {
     public static void main(String[] args) throws Exception{
-      CountryServiceClient client = new CountryServiceClient();
+      ServiceClient client = new ServiceClient();
       Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
       marshaller.setContextPath("org.example.helloservice");
       client.setMarshaller(marshaller);
       client.setUnmarshaller(marshaller);
       try {
-        ServiceResponse response = client.getCountryDetails("United States");      
+        ServiceResponse response = client.getCountryDetails("United States");
+        System.out.println("greeting>>>>>>"+response.getGreeting());
+        System.err.println("type>>>>>>"+response.getType());
       }
       catch (Exception e) {
           System.err.println("asdaaa"+e);
