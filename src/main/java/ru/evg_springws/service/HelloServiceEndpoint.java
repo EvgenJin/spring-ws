@@ -9,11 +9,14 @@ import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+import ru.evg_springws.dao.ServiceResponseDAO;
 
 @Endpoint
 public class HelloServiceEndpoint {
     private static final String namespaceUri = "http://www.example.org/HelloService"; 
 
+    ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-database.xml");
+    ServiceResponseDAO employeeDAO = (ServiceResponseDAO)applicationContext.getBean("ServiceResponseDAO");    
     
     /**
      * 
@@ -25,13 +28,12 @@ public class HelloServiceEndpoint {
     @PayloadRoot(localPart = "ServiceRequest", namespace = namespaceUri)
     @ResponsePayload
     public ServiceResponse getService(@RequestPayload ServiceRequest request) throws Exception {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("resources/spring-database.xml");
-        DataBaseDao dao = (DataBaseDao) applicationContext.getBean("JdbcTemplate");		
+        ServiceResponse retrievedEmployee = employeeDAO.getServiceResponse();
         String greeting = request.getFirstName();
         ObjectFactory factory = new ObjectFactory();
         ServiceResponse response = factory.createServiceResponse();
         response.setGreeting(greeting);
-        response.setType("asdasdads");
+        response.setType(retrievedEmployee.getGreeting());
         return response;
       }  
 }

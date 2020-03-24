@@ -10,23 +10,21 @@ import ru.evg_springws.dao.ServiceResponseDAO;
 
 public class MainApp {
     public static void main(String[] args) throws Exception{
-//      CountryServiceClient client = new CountryServiceClient();
-//      Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-//      marshaller.setContextPath("org.example.helloservice");
-//      client.setMarshaller(marshaller);
-//      client.setUnmarshaller(marshaller);
-//      try {
-//        ServiceResponse response = client.getCountryDetails("United States");      
-//      }
-//      catch (Exception e) {
-//          System.err.println("asdaaa"+e);
-//      }
-		
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-database.xml");
-		ServiceResponseDAO employeeDAO = (ServiceResponseDAO)applicationContext.getBean("employeeDAOWithJDBCTemplate");
-			
-		ServiceResponse retrievedEmployee = employeeDAO.getServiceResponse();
-		System.out.println("Retrieved Employee :: " + retrievedEmployee.getGreeting());
+      CountryServiceClient client = new CountryServiceClient();
+      Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
+      marshaller.setContextPath("org.example.helloservice");
+      client.setMarshaller(marshaller);
+      client.setUnmarshaller(marshaller);
+      try {
+        ServiceResponse response = client.getCountryDetails("United States");      
+      }
+      catch (Exception e) {
+          System.err.println("asdaaa"+e);
+      }		
+//		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-database.xml");
+//		ServiceResponseDAO employeeDAO = (ServiceResponseDAO)applicationContext.getBean("ServiceResponseDAO");			
+//		ServiceResponse retrievedEmployee = employeeDAO.getServiceResponse();
+//		System.out.println(">>>>>>>>RETURN :: " + retrievedEmployee.getGreeting());
     }
       
 }

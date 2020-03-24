@@ -8,6 +8,7 @@ package ru.evg_springws.dao;
 /**
  *
  * @author admin
+ * Имплементация интерфейса ServiceResponseDAO 
  */
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -36,15 +37,18 @@ public class ServiceResponseDAOImpl implements ServiceResponseDAO {
 //				new Object[] { employee.getEmployeeId(), employee.getName(),employee.getAge() });
 //		return count;
 //	}
-
+        /**
+         * 
+         * @return 
+         * Возвращает объект из таблицы models по запрошенному id 
+         */
 	public ServiceResponse getServiceResponse() {
 		ServiceResponse emp;
 		try {
 			emp = jdbcTemplate.queryForObject(
 					"select * from models where id =3",
 					new RowMapper<ServiceResponse>() {
-						public ServiceResponse mapRow(ResultSet rs, int rownumber)
-								throws SQLException {
+						public ServiceResponse mapRow(ResultSet rs, int rownumber) throws SQLException {
 							ServiceResponse e = new ServiceResponse();
 							e.setGreeting(rs.getString("name"));
 							return e;

@@ -4,19 +4,17 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
-    <bean id="employeeDAOWithJDBCTemplate" class="ru.evg_springws.dao.ServiceResponseDAOImpl">
+    <bean id="ServiceResponseDAO" class="ru.evg_springws.dao.ServiceResponseDAOImpl">
         <property name="jdbcTemplate" ref="myJdbcTemplate"/>
-    </bean>    
-										
+    </bean>										
     <bean id="myJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 	<constructor-arg ref="dataSource"/>
     </bean>
-    
-        <bean id="dataSource" 
-         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="org.sqlite.JDBC" />
-		<property name="url" value="jdbc:sqlite:/Users/admin/projects/NODE/Node_rest/database.sqlite3" />
-		<!--<property name="username" value="root" />-->
-		<!--<property name="password" value="admin" />-->
-	</bean>
+    <bean id="dataSource"
+     class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+            <property name="driverClassName" value="org.sqlite.JDBC" />
+            <property name="url" value="jdbc:sqlite:C:\Projects\DATABASE\database.sqlite3" />
+            <!--<property name="username" value="root" />-->
+            <!--<property name="password" value="admin" />-->
+    </bean>
 </beans>

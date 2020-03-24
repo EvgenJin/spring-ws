@@ -13,6 +13,5 @@ public class CountryServiceClient extends WebServiceGatewaySupport {
 
       ServiceResponse response = (ServiceResponse) getWebServiceTemplate().marshalSendAndReceive(uri, request);
       return response;
-   }
-   
+   }   
 }
